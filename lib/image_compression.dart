@@ -46,24 +46,25 @@ ImageFile compress(ImageFileConfiguration param) {
       width: image.width,
       height: image.height,
     );
-  } else {
-    final animation = img.decodeAnimation(input.rawBytes);
-    if (animation != null) {
-      final output = img.encodeGifAnimation(
-        animation,
-        samplingFactor: config.animationGifSamplingFactor,
-      );
+  } 
+//     else {
+//     final animation = img.decodeAnimation(input.rawBytes);
+//     if (animation != null) {
+//       final output = img.encodeGifAnimation(
+//         animation,
+//         samplingFactor: config.animationGifSamplingFactor,
+//       );
 
-      if (output != null) {
-        return ImageFile(
-          filePath: '',
-          rawBytes: Uint8List.fromList(output),
-          width: animation.width,
-          height: animation.height,
-        );
-      }
-    }
-  }
+//       if (output != null) {
+//         return ImageFile(
+//           filePath: '',
+//           rawBytes: Uint8List.fromList(output),
+//           width: animation.width,
+//           height: animation.height,
+//         );
+//       }
+//     }
+//   }
 
   return input;
 }
